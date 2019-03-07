@@ -1,0 +1,326 @@
+/* 
+	Remove SharePoint Style
+*/
+
+.ms-core-tableNoSpace {
+	margin: auto;
+}
+
+#suiteBar {
+	display: none;
+}
+
+#sideNavBox {
+	display: none;
+}
+
+#contentBox {
+	margin: 0px;
+}
+
+#s4-ribbonrow,
+#s4-mini-header {
+	display: none;
+}
+
+#contentRow {
+	padding-top: 0;
+}
+
+div.nf-non-dialog-outer {
+	padding: 0;
+}
+
+#s4-bodyContainer,
+#maincontent {
+	margin-top: 112px;
+}
+
+.navbar-toggle.featured {
+	padding: 10px;
+	margin: 0;
+	width: 45px;
+	margin-right: 23px;
+	margin-top: 25px;
+}
+
+.close {
+	width: inherit;
+}
+
+.btn-close-modal {
+	width: 100%;
+}
+
+.modal-title {
+	text-align: center;
+}
+
+.navbar-default .navbar-collapse {
+	background-color: #00457c;
+}
+
+.navbar-nav>li.navbar-list-item>a {
+	height: 92px;
+	padding-top: 35px;
+	color: #ccc;
+}
+
+.navbar-nav>li.navbar-list-item>a:hover {
+	color: #3CD;
+}
+
+.container-fluid>.navbar-header {
+	background: #e7e7e7;
+	height: 92px;
+}
+
+.navbar>.container-fluid .navbar-brand {
+	padding: 0px;
+	height: 90px;
+	margin-left: 15px;
+}
+
+.navbar-brand>img {
+	height: 100%;
+	width: auto;
+}
+
+.ng-view {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+}
+
+.app-table {
+	display: table;
+	width: 100%;
+	height: calc(100% - 114px);
+}
+
+.app-table-row {
+	display: table-row;
+}
+
+.app-table-cell {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+
+/*
+	Promoted Link Style
+*/
+
+.pl-main-div {
+	width: 160px;
+	height: 160px;
+	margin: auto;
+}
+
+.pl-container-div {
+	width: 150px;
+	height: 150px;
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+}
+
+.pl-image {
+	width: 100%;
+}
+
+.pl-style-div {
+	width: 150px;
+	height: 150px;
+	top: 100px;
+	left: 0px;
+	color: #fff;
+	background-color: rgba( 0, 0, 0, 0.6);
+	position: absolute;
+	transition: top 1s;
+}
+
+.pl-container-div:hover .pl-style-div {
+	top: 0px;
+}
+
+.pl-ul {
+	height: 150px;
+	overflow: hidden;
+	padding: 10px;
+	padding-top: 6px;
+	margin: 0px;
+}
+
+.pl-ul-item {
+	list-style-type: none;
+	text-align: left;
+}
+
+.pl-ul-item:first-child {
+	display: table-cell;
+	height: 36px;
+	overflow: hidden;
+	vertical-align: bottom;
+}
+
+.pl-ul-item:last-child {
+	padding-top: 15px;
+}
+
+.btn-link-custom label {
+	color: #337ab7;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn-link-custom label:hover {
+	color: #23527c;
+	text-decoration: underline;
+	outline: 0;
+}
+
+.direction-style-table {
+	direction: rtl;
+}
+
+.direction-style-table tr {
+	direction: ltr;
+}
+
+.arabic-direction {
+	direction: rtl;
+}
+
+div.btn-cancel-panel {
+	/*	right: 20px;
+	bottom: 55px;
+	top: inherit !important;
+	left: inherit !important;
+	position: fixed;*/
+	position: absolute;
+	top: 0px  !important;
+	left: inherit  !important;
+	right: 0px  !important;
+}
+
+td > div > div.btn-cancel-main-panel{
+	position: fixed;
+    top: inherit !important;
+    bottom: 55px;
+    right: 25px  !important;
+    left: inherit  !important;
+    width: 111px  !important;
+    height: 40px  !important;
+}
+
+div.header-section {
+	border-bottom: #e7e7e7 solid 8px;
+}
+
+div.header-section label {
+	font-size: x-large;
+}
+
+.arabic-attachment {
+	text-align: right;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled {
+	background-color: transparent !important;
+	border: 0;
+	outline: 0;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled div.ms-rtestate-write {
+	cursor: default;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled div.ms-rtestate-write:focus {
+	outline: 0;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled a {
+	cursor: pointer;
+}
+
+.previous-comment-div .ms-inputBoxDisabled {
+	background-color: transparent !important;
+	border: 0;
+	outline: 0;
+}
+
+.calculated-field .nf-calculation {
+	padding-top: 14px;
+}
+
+div.field-title {
+	border-bottom: #e7e7e7 solid 2px;
+}
+
+div.field-title label {
+	font-size: small;
+}
+
+div.sub-header {
+	border-bottom: #e7e7e7 solid 4px;
+}
+
+div.sub-header label {
+	font-size: medium;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: #00457c url('http://sezadtsewfe:150/sites/Nintex/SiteAssets/investment-app-images/footer-strip.png') no-repeat -40px 0;
+	margin: 20px 0 0 0;
+	padding: 5px 0 0 0;
+	color: #ccc;
+	width: 100%;
+	font-size: 12px;
+}
+
+.copyright {
+	float: left;
+}
+
+.copyright-wrapper a {
+	color: #eee;
+}
+
+.footer a:visited {
+	color: #eee;
+	text-decoration: underline;
+}
+
+.attachments-style input[type=file] {
+	padding: 0;
+}
+
+.attachments-style .ms-formlabel{
+    display: none;
+}
+
+/*.location-coordinates-view input {*/
+
+
+/*    border: 0;*/
+
+
+/*    text-align: center;*/
+
+
+/*    padding: 0;*/
+
+
+/*    margin: 0;*/
+
+
+/*}*/

@@ -1,0 +1,27 @@
+.previous-attachment-div div.ms-inputBoxDisabled {
+    background-color: transparent !important;
+    border: 0;
+    outline: 0;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled div.ms-rtestate-write {
+    cursor: default;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled div.ms-rtestate-write:focus {
+    outline: 0;
+}
+
+.previous-attachment-div div.ms-inputBoxDisabled a {
+    cursor: pointer;
+}
+
+.previous-comment-div .ms-inputBoxDisabled {
+    background-color: transparent !important;
+    border: 0;
+    outline: 0;
+}
+
+.calculated-field .nf-calculation {
+    padding-top: 14px;
+}

@@ -1,0 +1,23 @@
+.pl-ul-item {
+    float: right;
+}
+
+.nf-validation-summary ul {
+    direction: rtl;
+}
+
+.no-cr-div {
+    direction: rtl;
+}
+
+.decision-header, .attachments-style span {
+    text-align: right;
+}
+
+.investor-details-panel{
+    text-align: right;
+}
+
+.attachments-style .nf-attachmentsOnClient, .attachments-style input[type=file]{
+        direction: rtl;
+}

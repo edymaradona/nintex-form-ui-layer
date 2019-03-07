@@ -1,0 +1,575 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed featured" data-toggle="collapse" data-target="#langMenu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" src="/sites/Nintex/SiteAssets/investment-app-images/logo.png">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="langMenu">
+            <ul class="nav navbar-nav">
+                <li class="navbar-list-item active" onclick="selectEnglish(this)"><a href="#?lang=English">English <span class="sr-only">(current)</span></a></li>
+                <li class="navbar-list-item" onclick="selectArabic(this)"><a href="#?lang=Arabic">العربية</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="app-table">
+    <div class="app-table-row">
+        <div class="app-table-cell">
+            <div class="col-sm-2 col-sm-offset-4">
+                <div class="pl-main-div">
+                    <div class="pl-container-div">
+                        <a href="#" class="pl-link" onclick="displayCRForm()">
+                            <img src="/sites/Nintex/SiteAssets/investment-app-images/Investor.png" class="pl-image"></img>
+                            <div class="pl-style-div">
+                                <ul class="pl-ul">
+                                    <li class="pl-ul-item" data-dictionary="CR_LINK_TITLE">
+
+                                    </li>
+                                    <li class="pl-ul-item" data-dictionary="CR_LINK_DESCRIPTION">
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2">
+                <div class="pl-main-div">
+                    <div class="pl-container-div">
+                        <a href="#" class="pl-link" onclick="displayNoCRForm()">
+                            <img src="/sites/Nintex/SiteAssets/investment-app-images/Investor.png" class="pl-image"></img>
+                            <div class="pl-style-div">
+                                <ul class="pl-ul">
+                                    <li class="pl-ul-item" data-dictionary="NO_CR_LINK_TITLE">
+
+                                    </li>
+                                    <li class="pl-ul-item" data-dictionary="NO_CR_LINK_DESCRIPTION">
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class='container hide cr-number-main-div'>
+    <div class='row'>
+        <div class='col-xs-offset-3 col-xs-6'>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="crNumber" data-nintex-label="CR_LABEL_NINTEX"></label>
+                    <input type="text" class="form-control" id="crNumber" placeholder="CR Number">
+                </div>
+                <button type="button" class="btn btn-default validate-cr" data-dictionary="NO_CR_BTN_CHECK_CR">Check CR</button>
+            </div>
+            <label for="crNumber" data-nintex-label="COMPANY_NAME"></label>
+        </div>
+    </div>
+
+    <div class='row cr-decision-result-div hide'>
+        <div class='col-xs-offset-3 col-xs-6'>
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="isValidCRBtn" data-dictionary="IS_VALID_CR_MESSAGE"></label>
+                    <button type="button" class="btn btn-primary is-valid-cr-btn" data-dictionary="IS_VALID_CR_BTN">Valid</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="listOfAttachments" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" data-dictionary="ATTACHMENTS_DETAILS_HEADER"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="english-modal-body-details">
+                    <p>
+                        <strong><span style="color: red;">*</span>Bank Statement of the investor or the company</strong></p>
+                    <p>
+                        <strong><span style="color: red;"><strong>*</strong></span>Copies of ID Cards of the proprietor, Partners, Founders or Authorized Signatories</strong>
+                    </p>
+                    <p>
+                        <strong><span style="color: red;"><strong>*</strong></span>Description of the Investment Project and its needs.</strong>
+                    </p>
+                    <p>
+                        <strong><span style="color: red;"><strong>*</strong></span><a target="_blank" href="">
+                            Project details form.
+                        </a></strong>
+                    </p>
+                </div>
+                <div class="arabic-modal-body-details hide no-cr-div">
+                    <p>
+                        <strong><span style="color: red;">*</span>  تصريح البنك المركزي للمستثمر او الشركة  </strong></p>
+                    <p>
+                        <strong><span style="color: red;"><strong>*</strong></span> نسخة من البطاقة الشخصية للمالك، الشركاء، المؤسسون أو المفوضين بالتوقيع </strong>
+                    </p>
+                    <p>
+                        <strong><span style="color: red;"><strong>*</strong></span>وصف المشروع الاستثماري واحتياجاته.</strong>
+                    </p>
+                     <p>
+                        <strong><span style="color: red;"><strong>*</strong></span><a target="_blank" href="">
+                            تفاصيل المشروع تشكل
+                        </a></strong>
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal" data-dictionary="MODAL_CLOSE_BTN"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="proceduresLinkDetails" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" data-dictionary="PROCEDURES_DETAILS_HEADER"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="english-modal-body-details">
+                    <table width="100%" class="ms-rteTable-default " cellspacing="0">
+                        <tbody>
+                            <tr class="ms-rteTableEvenRow-default">
+                                <td class="ms-rteTableOddCol-default">
+                                    <p>
+                                        <strong>Dear Investor,</strong></p>
+                                    <p>COMPANY_NAME would like to thank you for your interest in the Area and to welcome the establishment of your investment enterprise therein. The Authority kindly requests you to read the
+                                        below instructions carefully before filling out the form in order to understand the investment environment related to your enterprise and to provide the data, records and documents required in order to avoid any
+                                        delay in deciding on your application.</p>
+                                </td>
+                            </tr>
+                            <tr class="ms-rteTableOddRow-default">
+                                <td class="ms-rteTableOddCol-default">
+                                    <p dir="ltr">Please read the legislations regulating the investment at Company by visiting the Authority Website. </p>
+                                </td>
+                            </tr>
+                            <tr class="ms-rteTableEvenRow-default">
+                                <td class="ms-rteTableOddCol-default">
+                                    <p>1- The application shall be submitted to the one-stop station, either in COMPANY_NAME or Muscat, by the applicant himself or his legal representative, providing therewith all the required data and information and attaching
+                                        all the documents and records. Investors are particularly reminded to be accurate when filling out the form. Applications are considered only after satisfying the necessary data and documents and are signed by the
+                                        authorized person, confirming the accuracy of the information contained therein.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table width="100%" class="ms-rteTable-default" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="ms-rteTable-default" style="width: 100%;">
+                                    <p>2- This application will be relied upon in taking the following actions/procedures during the period indicated alongside each, as maximum, calculated from the date of satisfying all the required data, information and
+                                        documents.
+                                    </p>
+                                    <table width="100%" class="ms-rteTable-default direction-style-table" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>Stipulated Period for Decision-making</strong></td>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>Action / Procedure</strong></td>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>S/N</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Five (5) business days</td>
+                                                <td class="ms-rteTable-default">Commercial Registration</td>
+                                                <td class="ms-rteTable-default">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Thirty (30) days</td>
+                                                <td class="ms-rteTable-default">Land Utilization Permit </td>
+                                                <td class="ms-rteTable-default">2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Fifteen (15) business days</td>
+                                                <td class="ms-rteTable-default">Initial Permit for the exercise of activity in the Area</td>
+                                                <td class="ms-rteTable-default">3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <p>3- Company charges the Following fees :</p>
+                                    <table width="100%" class="ms-rteTable-default direction-style-table" cellspacing="0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>Due</strong></td>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>Charge in OMR</strong></td>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>Service</strong></td>
+                                                <td class="ms-rteTable-default">
+                                                    <strong>S/N</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Upon applying for land usufruct</td>
+                                                <td class="ms-rteTable-default">250</td>
+                                                <td class="ms-rteTable-default">Land usufruct</td>
+                                                <td class="ms-rteTable-default">1</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Upon registration in the commercial register</td>
+                                                <td class="ms-rteTable-default">1000</td>
+                                                <td class="ms-rteTable-default">Project registration in the commercial register </td>
+                                                <td class="ms-rteTable-default">2</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="ms-rteTable-default">Upon registration of contract</td>
+                                                <td class="ms-rteTable-default">One percent (1%) of the agreed usufruct amount</td>
+                                                <td class="ms-rteTable-default">Registration of land usufruct contracts</td>
+                                                <td class="ms-rteTable-default">3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">4- No enterprise registered in the register shall start practicing any registered activities before satisfying the other requirements prescribed by the Authority for the final permit and obtaining a license certificate
+                                    to start practicing the activities issued by the Authority within fifteen (15) business days from the date of satisfying the requirements contained in the initial approval, knowing that some of the activities may require
+                                    approvals of other authorities in accordance with the provisions set forth in the regulations issued by the Authority.</td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">5- All documents and records to be submitted with the application must be satisfied in accordance with the legal form of the enterprise. Please check/make sure that all the required documents following </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>&#160;</p>
+                    <p>
+                        <span style="color: #cc3300; font-size: 11pt;"><strong style="color: #cc3300;">&#160;</strong><strong style="color: #cc3300;"><span style="color: #cc3300;">Checklist of required documents:</span></strong>
+                        </span>
+                    </p>
+                    <table width="100%" class="ms-rteTable-default direction-style-table" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>Branch of International Company </strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Branch of existing local Institution / Company</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>New Company</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <p>
+                                        <strong>New Sole</strong></p>
+                                    <p>
+                                        <strong>Proprietor</strong></p>
+                                </td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Required Documents</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>No.</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Bank statement of the investor or the company. (if land usufruct required). </strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>1</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Copies of ID Cards of the proprietor, Partners, Founders or Authorized Signatories.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>2</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Signature specimen of the authorized signatories. (Appendix 1).</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>3</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default" style="width: 29%;">
+                                    <strong>Description of the Investment Project and its needs (Appendix 2).</strong></td>
+                                <td class="ms-rteTable-default" style="width: 5%;">
+                                    <strong>4</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Articles and Memorandum of Association signed by the Partners, provided that their signatures conform to the specimen shown in the Civil ID (Appendix 3) or as the company deems appropriate.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>5</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Minutes of the Partners&#39; meeting. In case one of the Partners is a legal entity, the minutes of the meeting must show the value of this Partner&#39;s share and his authorized signatory who will sign, on his behalf, the Memorandum of Association of the Company under establishment.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>6</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Certified copy of the Articles and Memorandum of Association of the Foreign Partner Company and proof of its registration in the foreign country; translated into Arabic Language.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>7</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Certified copy of the Articles and Memorandum of Association of the international company at its principal office, translated into Arabic Language.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>8</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Certified letter confirming responsibility of the Company&#39;s principal office for the activities undertaken by its branch in the Sultanate, translated into Arabic Language.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>9</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Certified registration certificate at the Company&#39;s principal office in the original country, translated into Arabic Language.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>10</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Certified authorization from the principal office authorizing the branch director / directors to run the activities in the Sultanate, translated into Arabic Language.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>11</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Official letter from the proprietor of the institution or company seeking registration of the branch and activities at the Zone</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>12</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Minutes of the Partners&#39; meeting showing the decision to register the branch and activities (Companies).</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>13</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Amended Articles and Memorandum of Association (Companies).</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>14</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>Copy of the official documents and licenses issued by the concerned authorities.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>15</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="ms-rteTable-default">
+                                    <strong>&#160;</strong></td>
+                                <td class="ms-rteTable-default">​</td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>√</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>No-objection letter from the current sponsor to register the project at the Zone in event the applicant holds a resident visa in the Sultanate.</strong></td>
+                                <td class="ms-rteTable-default">
+                                    <strong>16</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p>&#160;</p>
+                </div>
+                <div class="arabic-modal-body-details hide">
+                    <div dir="rtl" style="text-align: right;">
+                        
+                    </div>
+                   
+                    <p>&#160;</p>
+                    <p dir="rtl" style="text-align: right;">
+                        <strong style="color: #cc3300; font-size: 11pt;"><span style="color: #cc3300;"><span></strong></p>
+                  
+                    <p dir="rtl" style="text-align: right;">&#160;</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal" data-dictionary="MODAL_CLOSE_BTN"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="noCrYet" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" data-dictionary="NO_CR_YET_HEADER"></h4>
+            </div>
+            <div class="modal-body no-cr-div">
+                <P data-dictionary="NO_CR_YET_TEXT"></P>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-close-modal" data-dismiss="modal" data-dictionary="MODAL_CLOSE_BTN"></button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+<div class="container">
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<span class="copyright">
+        <a href="#" class="procedures-footer-link" data-dictionary="PROCEDURES_DETAILS_HEADER"></a> |
+        <a href="#"  class="attachment-footer-link" data-dictionary="ATTACHMENTS_DETAILS_HEADER"></a>                      
+			</span>
+      <br>© Copyright 2017 COMPANY_NAME. All rights reserved
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+      <p class="siteDev">
+        <span class="w3c hide">
+          This website confirms to W3C standards:
+          <a href="http://validator.w3.org/check?uri=referer" title="Validate as HTML5" class="html5"><span class="glyphicon glyphicon-ok"></span> HTML5 </a> |
+          <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Validate as CSS3" class="css3"> <span class="glyphicon glyphicon-ok"></span> CSS3 </a> | 
+          <a href="http://www.w3.org/WAI/WCAG1AA-Conformance" class="wai"><span class="glyphicon glyphicon-ok"></span> WAI-AA WCAG 2.0</a>
+        </span>
+        <br>
+        Powered by <a href="http://www.COMPANY_NAME.gov.om/">COMPANY_NAME</a>
+      </p>           
+		</div>
+	</div>
+</footer>
